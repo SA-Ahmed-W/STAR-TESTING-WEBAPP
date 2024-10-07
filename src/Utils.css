@@ -1,0 +1,35 @@
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+.glowing-text {
+  transition: all 0.5s;
+}
+.glowing-text:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff,
+    0 0 120px #fff;
+}
+.d-flex {
+  display: flex ;
+}
+.justify-content-between {
+  justify-content: space-between ;
+}
+.btn-border-none {
+  border: none;
+  background: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.text-size-large {
+  font-size: 30px;
+  margin: 1px;
+  font-weight: 900;
+}

@@ -1,0 +1,30 @@
+.batteryIndicator {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    z-index: 2;
+  }
+  .batteryIndicator-low-charging-battery {
+    background: #c40d0d;
+    filter: blur(3px);
+    box-shadow: 0 0 10px #b50b0b, 0 0 20px #b20a0a, 0 0 40px #cf0505,
+      0 0 80px #cc0808, 0 0 120px #cb0b0b;
+  }
+  .batteryIndicator-charging-battery {
+    background: #3ae20c;
+    filter: blur(3px);
+    box-shadow: 0 0 10px #3ae20c, 0 0 20px #3ae20c, 0 0 40px #3ae20c,
+      0 0 80px #3ae20c, 0 0 120px #3ae20c;
+  }
+  .batteryIndicator-idle-battery {
+    background: #0bc0f2;
+  
+    filter: blur(3px);
+    box-shadow: 0 0 10px #0bc0f2, 0 0 20px #0bc0f2, 0 0 40px #0bc0f2,
+      0 0 80px #0bc0f2, 0 0 120px #0bc0f2;
+  }
+  
