@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Utils.css";
+import CardContainer from './components/CardContainer';
 function App() {
   return (
    <>
@@ -11,6 +12,7 @@ function App() {
             Location And Battery Status
           </span>
         </p>
+        <CardContainer/>
     </main>
    </>
   )

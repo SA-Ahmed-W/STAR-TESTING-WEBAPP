@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../BatteryCard.css";
+import "./BatteryCard.css";
 
 function BatteryCard() {
     let [batteryInfo, setBatteryInfo] = useState({

@@ -1,11 +1,13 @@
 import React from "react";
+import LocationCard from "./LocationCard";
+import BatteryCard from "./BatteryCard";
 
 function CardContainer() {
   return (
     <div>
       <div className="gradient-cards">
-        {/* <Location />
-        <Battery /> */}
+        <LocationCard/>
+        <BatteryCard/>
       </div>
     </div>
   );

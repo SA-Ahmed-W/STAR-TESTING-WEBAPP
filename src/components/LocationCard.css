@@ -1,0 +1,47 @@
+.copyLocationContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    /* margin: 10px; */
+    z-index: 100;
+  }
+  .container-title-location-battery {
+    color: #656464;
+    font-weight: bolder;
+    transition: all 0.5s;
+  }
+  .container-title-location-battery:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff,
+      0 0 120px #fff;
+  }
+  .container-title-location {
+    text-align: center;
+    font-size: 30px;
+    color: #de1160;
+  }
+  .container-title-location-d-none {
+    display: none;
+  }
+  /* ask locati0on permission section */
+  .locationBTN-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .showShereLocationBtn {
+    display: none;
+  }
+  
+  .showAskLocationBtn {
+    display: none;
+  }
+  .showStopShereLocationBtn {
+    display: none;
+  }
+  
