@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import Login from "./components/Login";
 import "./index.css";
-import "./utils.css";
+import "./Utils.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layouts from "./Layouts.jsx";
