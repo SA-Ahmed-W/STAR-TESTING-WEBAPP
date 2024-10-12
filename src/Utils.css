@@ -117,8 +117,13 @@
 
 
 .text-bigger{
-  font-size: 50px;
+  font-size: 3.5vw;
+  width: 100%;
   font-weight: 900;
+}
+
+.w-100{
+  width: 100%;
 }
 
 

@@ -17,43 +17,68 @@ function Navbar() {
 
   return (
     <>
-      <div className="container">
-        <div className="container__head d-flex justify-content-center align-items-center flex-column">
-          <span className="container-title">
-            {/* Smart Transport Automative System  */}
-            <li>
-              <Link to="/" className="navItem btn-shine text-bigger">
-                Smart Transport Automative System
+      <div className="nav__container d-flex flex-column">
+        <li className="">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Link to="/" className="btn-shine text-bigger">
+              Smart Transport Automative System
+            </Link>
+          </div>
+        </li>
+        <li>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {login ? (
+              <button
+                style={{
+                  border: "none",
+                  background: "none",
+                  fontSize: "16px",
+                  cursor: "pointer",
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "40px",
+                  width: "300px",
+                }}
+                className=""
+                onClick={() => {
+                  auth.signOut();
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                style={{
+                  border: "none",
+                  background: "none",
+                  fontSize: "16px",
+                  cursor: "pointer",
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "40px",
+                  width: "300px",
+                  color: "rgb(137, 104, 255)",
+                }}
+              >
+                Login
               </Link>
-            </li>
-            <li>
-              {login ? (
-                <button
-                  style={{
-                    border: "none",
-                    background: "none",
-                    fontSize: "16px",
-                    cursor: "pointer",
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "40px",
-                    marginLeft: "-30px",
-                  }}
-                  className="navItem"
-                  onClick={() => {
-                    auth.signOut();
-                  }}
-                >
-                  Logout
-                </button>
-              ) : (
-                <Link to="/login" className="navItem">
-                  Login
-                </Link>
-              )}
-            </li>
-          </span>
-        </div>
+            )}
+          </div>
+        </li>
       </div>
     </>
   );

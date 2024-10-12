@@ -122,16 +122,3 @@
   font-size: 16px;
   max-width: 470px;
 }
-
-
-li{
-  list-style: none;
-}
-
-.navItem{
-  text-decoration: none;
-}
-li:nth-child(2){
-  margin-right: 0;
-  /* background-color: #3da077; */
-}

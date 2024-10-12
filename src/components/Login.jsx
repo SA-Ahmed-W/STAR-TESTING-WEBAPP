@@ -6,8 +6,10 @@ import {
 } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; // Firestore functions
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  let navigate = useNavigate();
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -29,6 +31,7 @@ function Login() {
       );
       // console.log(res);
       if (res) {
+        navigate("/");
         console.log("user logged in");
       } else {
         console.log("user not logged in");
@@ -50,6 +53,7 @@ function Login() {
       console.log(res);
       if (res) {
         console.log("user created");
+        navigate("/");
         const userId = res.user.uid;
         const docRef = doc(db, "BOTS", userId);
         // Create an empty document
