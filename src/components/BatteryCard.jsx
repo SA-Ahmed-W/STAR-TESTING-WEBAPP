@@ -5,7 +5,7 @@ import { db, auth } from "../firebase"; // Firestore instance
 import { doc, updateDoc } from "firebase/firestore"; // Firestore functions
 
 function BatteryCard() {
-  const [userID, setUserId] = useState(null);
+  const [userID, setUserId] = useState(auth.currentUser?.uid);
   const [batteryInfo, setBatteryInfo] = useState({
     level: 0,
     charging: false,
@@ -67,11 +67,6 @@ function BatteryCard() {
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUserId(user.uid);
-      }
-    })
     getBatteryInfo(); // Fetch initial battery info
   }, []);
 
