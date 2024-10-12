@@ -1,21 +1,13 @@
-import React from 'react'
-import "./Utils.css";
-import CardContainer from './components/CardContainer';
+import React from "react";
+import CardContainer from "./components/CardContainer";
+
+
 function App() {
   return (
-   <>
-    <main className="container">
-        <p className="container-title">
-          ECO GAURDIAN BOT
-          <br />
-          <span className="container-title-location-battery">
-            Location And Battery Status
-          </span>
-        </p>
-        <CardContainer/>
-    </main>
-   </>
-  )
+    <>
+        <CardContainer />
+    </>
+  );
 }
 
-export default App
+export default App;
