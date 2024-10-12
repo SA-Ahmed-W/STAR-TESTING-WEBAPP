@@ -20,35 +20,35 @@ function BatteryCard() {
     });
   }, []);
 
-  // Function to update battery info in Firestore
-  const updateBatteryInfoInFirestore = async (batteryData) => {
-    try {
-      const docRef = doc(db, "BOTS", userID);
-
-      // Update only the battery field inside the document
-      await updateDoc(docRef, {
-        BATTERY: {
-          PERCENTAGE: batteryData.level,
-          TEMPERATURE: batteryData.temperature,
-          IS_CHARGING: batteryData.charging,
-        },
-      });
-    } catch (error) {
-      console.error("Error updating battery info:", error);
-    }
-  };
+  // Update battery info in Firestore
+  const updateBatteryInfoInFirestore = (batteryData) =>
+    userID &&
+    updateDoc(doc(db, "BOTS", userID), {
+      "BATTERY.PERCENTAGE": batteryData.level,
+      "BATTERY.TEMPERATURE": batteryData.temperature,
+      "BATTERY.IS_CHARGING": batteryData.charging,
+    }, { merge: true }).catch(console.error);
 
   // Get battery information and listen for changes
   const getBatteryInfo = () => {
+    let prevCharging = null;
+    let prevLevel = null;
     navigator.getBattery().then((battery) => {
       const updateBatteryLevel = () => {
-        const updatedInfo = {
-          level: Math.round(battery.level * 100),
-          charging: battery.charging,
-          temperature: Math.floor(Math.random() * (40 - 20 + 1)) + 20, // Simulated temperature
-        };
-        setBatteryInfo(updatedInfo);
-        updateBatteryInfoInFirestore(updatedInfo); // Update Firestore with the new battery data
+        if (
+          prevCharging !== battery.charging ||
+          prevLevel !== battery.level
+        ) {
+          const updatedInfo = {
+            level: Math.round(battery.level * 100),
+            charging: battery.charging,
+            temperature: Math.floor(Math.random() * (40 - 20 + 1)) + 20, // Simulated temperature
+          };
+          setBatteryInfo(updatedInfo);
+          updateBatteryInfoInFirestore(updatedInfo); // Update Firestore with the new battery data
+          prevCharging = battery.charging;
+          prevLevel = battery.level;
+        }
       };
 
       battery.addEventListener("levelchange", updateBatteryLevel);
