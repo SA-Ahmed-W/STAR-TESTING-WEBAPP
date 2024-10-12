@@ -67,6 +67,11 @@ function BatteryCard() {
   };
 
   useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserId(user.uid);
+      }
+    })
     getBatteryInfo(); // Fetch initial battery info
   }, []);
 
